@@ -23,7 +23,7 @@ public class URLTemplateController {
 		model.addAttribute("age",age);
 		System.out.println("id = "+id);
 		System.out.println("age = "+age);
-		return "forward:../../view.jsp";
+		return "redirect:/view.jsp";
 	}
 }
 
