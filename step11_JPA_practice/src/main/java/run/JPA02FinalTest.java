@@ -15,7 +15,7 @@ public class JPA02FinalTest {
 		JPA02_CRUD service = JPA02_CRUD.getInstance();
 		
 		try {
-			service.create(em, tx);
+//			service.create(em, tx);
 			service.insert(em, tx, new User(1L,"spring",2));
 			service.insert(em, tx, new User(2L,"Java",22));
 			service.insert(em, tx, new User(3L,"backEnd",33));

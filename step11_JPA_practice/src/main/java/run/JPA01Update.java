@@ -10,8 +10,12 @@ import entity.User;
 public class JPA01Update {
 	public void update(EntityManager em,User updateUser) {
 		User user = em.find(User.class,updateUser.getId());
-		user.setAge(updateUser.getAge());
-		user.setName(updateUser.getName());
+		if(updateUser.getAge() != 0) {
+			user.setAge(updateUser.getAge());
+		}
+		if(updateUser.getName() != null) {
+			user.setName(updateUser.getName());
+		}
 	}
 	
 }
