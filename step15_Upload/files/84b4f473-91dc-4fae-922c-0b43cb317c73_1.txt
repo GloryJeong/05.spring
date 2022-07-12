@@ -1,0 +1,24 @@
+https://docs.google.com/spreadsheets/d/1fIlcfLM4bthGYcd0MWDQAGDPOM1x31gAKQgUdDO591Y/edit#gid=889097133
+
+
+https://docs.google.com/presentation/d/1fs9kCIT2fkGBjXGpPsNrbn_r_zpQ94JDFqTYezjlslk/edit#slide=id.g7c04ebccae_0_302
+
+
+코드팬
+https://codepen.io/
+
+
+Postman설치
+workcspaces -> Create workspace
+이름 fullstack
+
+공공데이터포털
+영화진흥위원회 api 회원가입후 키발급
+
+624441724877687334344d626a6c4c
+7845726e47776873333957696e686f 
+
+4b6258575a7768733130394d79676952
+
+http://openapi.seoul.go.kr:8088/4b6258575a7768733130394d79676952/JSON/bookStoreAllInfo/1/10/?
+

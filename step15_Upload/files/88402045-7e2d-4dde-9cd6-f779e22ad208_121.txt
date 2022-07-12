@@ -1,0 +1,52 @@
+-- 직업별 salary의 총합과 job_id 출력
+-- group by
+select job_id, sum(salary) from employees group by job_id;
+
+
+-- 직업별 인원과 max_salary와 min_salary를 직업별 인원이 많은 순 부터 출력 
+-- group by, join, order by
+select e.job_id,count(e.job_id) as 직업별인원,j.max_salary, min_salary from employees e, jobs j 
+where e.job_id = j.job_id
+group by e.job_id
+order by  직업별인원 desc; 
+
+
+-- employee_id가 116인 사람의 salary을 3500으로 변경하시오.
+-- update
+set @@autocommit = 0;
+select salary from employees where employee_id = 116;
+UPDATE employees SET salary = 3500 WHERE employee_id =116; 
+ROLLBACK;
+
+-- 퇴사자중 job_id가 'SA_MAN'인 사람의 데이터를 삭제하시오.
+-- DELETE
+select * from job_history; 
+delete FROM job_history where job_id = 'SA_MAN';
+rollback;
+
+-- 부서ID별 city를 부서id 오름차순으로 정렬하여 출력하시오.
+-- join, order by 
+select d.department_id, l.city
+from departments d, locations l
+where d.location_id = l.location_id
+order by d.department_id asc;
+
+-- 부서id가 20번의 근무 지역을 출력하는 프로시져를 생성하시오.
+-- procedure, subquery(3)
+drop procedure IF EXISTS getcontry_name;
+DELIMITER $$
+CREATE PROCEDURE getcontry_name(IN i_department_id INT)
+BEGIN 
+	select region_name
+    from regions
+	where region_id in(SELECT region_id
+		from countries 
+		where country_id in(select country_id
+							from locations
+							where location_id in(select location_id
+													from departments d
+													where d.department_id = i_department_id)));
+    
+END $$
+DELIMITER ;
+CALL getcontry_name(20);
