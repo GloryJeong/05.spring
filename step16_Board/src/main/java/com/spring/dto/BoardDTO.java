@@ -6,6 +6,7 @@ import java.util.List;
 
 import com.spring.Entity.Board;
 import com.spring.Entity.Comment;
+//import com.spring.Entity.FileEntity;
 import com.spring.Entity.User;
 
 import lombok.AllArgsConstructor;
@@ -32,6 +33,8 @@ public class BoardDTO {
 	private LocalDateTime modifiedDate;
 	
 	private List<Comment> comment = new ArrayList<Comment>();
+	
+//	private FileEntity file;
 	
 	public Board toEntity(BoardDTO boardDTO) {
 		Board boardEntity = Board.builder()

@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -61,7 +62,10 @@ public class Board {
 	
 	@OneToMany(mappedBy = "board")
 	@JsonIgnore
-	private List<Comment> comment = new ArrayList<Comment>(); 
+	private List<Comment> comment = new ArrayList<Comment>();
+	
+//	@OneToOne
+//	private FileEntity file;
 	
 	public BoardDTO toDTO(Board board) {
 		BoardDTO boardDTO = BoardDTO.builder()

@@ -18,8 +18,10 @@ public interface CommentRepository extends JpaRepository<Comment, Long> {
 
 	public List<Comment> findByBoardBoardNo(Long boardNo);
 	
-//	@Query(value = "SELECT count(c.board_no) AS boardCount FROM Comment c GROUP BY c.board_no having c.board_no between :start and :end",nativeQuery = true)
-//	public List<Integer> findGroupbyComments(int start,int end);
+	@Query(value = "SELECT count(c.board_no) AS boardCount FROM Comment c "
+			+ "GROUP BY c.board_no "
+			+ "having c.board_no between :start and :end",nativeQuery = true)
+	public List<Integer> findGroupbyComments(int start,int end);
 	
 	
 }
